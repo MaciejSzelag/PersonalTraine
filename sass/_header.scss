@@ -1,0 +1,121 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 150vh;
+
+    .main-title,
+    .main-img {
+        position: relative;
+        width: 100%;
+    }
+
+    .main-title {
+
+        height: 40%;
+        // border-bottom: 1px solid white;
+        z-index: 1;
+
+
+        .title-wrap {
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            top: 30%;
+            transform: translateX(-50%);
+
+            .title {
+                position: relative;
+                width: 100%;
+                margin-bottom: 3rem;
+                text-align: center;
+                font-size: 25rem;
+                // line-height: 20rem;
+                font-variant: small-caps;
+                overflow: h;
+
+            }
+
+            .title-1:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 30%;
+                width: 100%;
+                height: 1.5rem;
+                background-color: black;
+                box-shadow: 0 1.2rem 2rem $color-main-1;
+                z-index: -1;
+            }
+        }
+    }
+
+    .main-img {
+        height: 60%;
+        background-color: rgb(0, 0, 0);
+
+        .img-wrap {
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/headerImg/fitness_1920.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+
+}
+
+@media(max-width: 1024px) {
+    header {
+        .main-title {
+
+            .title-wrap {
+
+                .title {
+                    font-size: 17vw;
+
+                }
+
+
+            }
+        }
+
+        .main-img {
+
+
+            .img-wrap {
+
+                background-image: url(../img/headerImg/fitness_640.jpg);
+                background-position: left;
+                animation: pic-l-to-r 10s ease-in-out infinite both;
+
+            }
+        }
+
+    }
+}
+
+@keyframes pic-l-to-r {
+    0% {
+        background-position: left;
+    }
+
+    10% {
+        background-position: right;
+    }
+
+    40% {
+        background-position: left;
+    }
+
+    90% {
+        background-position: right;
+    }
+
+    100% {
+        background-position: left;
+    }
+}
