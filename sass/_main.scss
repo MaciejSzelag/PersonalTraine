@@ -10,6 +10,7 @@ html {
     scroll-behavior: smooth;
 
     body {
+        height: auto;
         color: white;
         background-color: black;
     }
@@ -29,6 +30,12 @@ html {
         ;
         // outline: 1px solid $color-main-1;
         border-radius: 10px;
+    }
+
+    .body-active-menu {
+        height: 100vh !important;
+        overflow: hidden;
+
     }
 }
 
@@ -332,6 +339,10 @@ main {
             }
         }
     }
+}
+
+.main-menu-acive {
+    filter: blur(8px);
 }
 
 @keyframes black-enter {
