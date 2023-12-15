@@ -21,11 +21,15 @@ function paralax() {
 const socialMedia = document.getElementById("social-media")
 function showSW() {
     let scrolled = scrolling();
-    if (scrolled >= 30) {
-        socialMedia.style.setProperty("right", '0')
-    } else {
-        socialMedia.style.setProperty("right", '-20%')
+    if (window.innerWidth > 800) {
+        if (scrolled >= 30) {
+            socialMedia.style.setProperty("right", '0')
+        } else {
+            socialMedia.style.setProperty("right", '-20%')
+        }
+
     }
+
 }
 const menuBars = document.getElementById("barsWrap");
 const menuMobile = document.getElementById("menu-mobile");

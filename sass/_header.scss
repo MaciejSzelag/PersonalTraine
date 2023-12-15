@@ -1,10 +1,8 @@
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex-center-column;
     width: 100%;
     height: 150vh;
+    overflow: hidden;
 
     .main-title,
     .main-img {
@@ -13,9 +11,7 @@ header {
     }
 
     .main-title {
-
         height: 40%;
-        // border-bottom: 1px solid white;
         z-index: 1;
 
 
@@ -32,11 +28,8 @@ header {
                 margin-bottom: 3rem;
                 text-align: center;
                 font-size: 22rem;
-                // line-height: 20rem;
                 font-variant: small-caps;
-                // overflow: h;
                 text-shadow: .2rem .2rem.2rem white;
-
             }
 
             .title-1:before {
@@ -61,44 +54,30 @@ header {
         .img-wrap {
             width: 100%;
             height: 100%;
-            background-image: url(../img/TomGilbertImg/TomGilbert-PT.jpg);
-            // background-image: url(../img/headerImg/fitness_1920.jpg);
-            // background-image: url(../img/dandelion_1920.jpg);
+            background-image: url(../img/headerImg/fitness_1920.jpg);
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
         }
     }
-
 }
 
 @media(max-width: 1300px) {
     header {
         .main-title {
-
             .title-wrap {
-
                 .title {
                     font-size: 17vw;
-
                 }
-
-
             }
         }
 
         .main-img {
-
-
             .img-wrap {
-
-                background-image: url(../img/TomGilbertImg/TGbody.png);
+                background-image: url(../img/fitness/man-1280.jpg);
                 background-position: right;
-                // animation: pic-l-to-r 10s ease-in-out infinite both;
-
             }
         }
-
     }
 }
 
@@ -111,14 +90,6 @@ header {
                 }
             }
         }
-
-        // .main-img {
-        //     .img-wrap {
-        //         // background-image: url(../img/headerImg/fitness_640.jpg);
-        //         // background-position: left;
-        //         // animation: pic-l-to-r 10s ease-in-out infinite both;
-        //     }
-        // }
     }
 }
 
@@ -131,35 +102,5 @@ header {
                 }
             }
         }
-
-        // .main-img {
-        //     .img-wrap {
-        //         // background-image: url(../img/headerImg/fitness_640.jpg);
-        //         // background-position: left;
-        //         // animation: pic-l-to-r 10s ease-in-out infinite both;
-        //     }
-        // }
-    }
-}
-
-@keyframes pic-l-to-r {
-    0% {
-        background-position: left;
-    }
-
-    10% {
-        background-position: right;
-    }
-
-    40% {
-        background-position: left;
-    }
-
-    90% {
-        background-position: right;
-    }
-
-    100% {
-        background-position: left;
     }
 }
