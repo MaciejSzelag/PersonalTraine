@@ -30,26 +30,45 @@ html {
         overflow: hidden;
 
     }
-}
 
-.black-enter {
-    @include flex-center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    animation: black-enter 8s ease-in-out 1 both;
-    z-index: 1000;
+    .slide-active,
+    .slide-exit {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: $color-main-1;
+        z-index: 2000;
+    }
 
-    .black-enter-1 {
-        color: whitesmoke;
-        font-size: 6rem;
-        font-variant: small-caps;
+    .slide-active:after,
+    .slide-exit::after {
+        content: "New You, New Life";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        @include flex-center-column-full;
+        font-size: 10vh;
         text-align: center;
     }
+
+    .slide-active {
+        top: -120%;
+        animation: enter 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
+    }
+
+    .slide-exit {
+        top: 0;
+        animation: exit 1s 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
+    }
+
+
 }
+
+
+
+
 
 .color-main-1 {
     color: $color-main-1;
@@ -83,8 +102,9 @@ main {
         }
     }
 
+
     .section-1 {
-        background-color: rgba(255, 255, 255, 0.973);
+        background-color: rgb(255, 255, 255);
         color: black;
 
         .section-container {
@@ -147,6 +167,10 @@ main {
                                 text-decoration: none;
                                 transition: .3s ease-in-out;
 
+                                i {
+                                    margin: 0 1rem 0 0
+                                }
+
                             }
                         }
 
@@ -163,6 +187,8 @@ main {
             }
         }
     }
+
+
 
     .section-2 {
         .section-container {
@@ -467,31 +493,24 @@ main {
     }
 }
 
-@keyframes black-enter {
-    0% {
 
-        transform: scale(1);
-        opacity: 1;
+
+@keyframes enter {
+    from {
+        top: -120%;
     }
 
-    10% {
-        transform: scale(1);
+    to {
+        top: 0;
+    }
+}
+
+@keyframes exit {
+    from {
+        top: 0;
     }
 
-    70% {
-        transform: scale(2.5);
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 0;
-        transform: scale(70);
-
-    }
-
-    100% {
-        opacity: 0;
-        display: none;
-        transform: scale(5);
+    to {
+        top: -120%;
     }
 }

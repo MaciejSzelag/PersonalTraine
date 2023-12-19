@@ -13,20 +13,25 @@ function progressBar() {
     let scrolled = scrolling();
     myBar.style.width = scrolled + "%";
 }
-const headerImg = document.querySelector(".img-wrap")
+const headerImg = document.querySelector(".img-paralax")
 function paralax() {
-    let scrolled = scrolling();
-    headerImg.style.setProperty(`transform`, ` translateY(${scrolled * 1.5}%)`)
+    if (headerImg) {
+        let scrolled = scrolling();
+        headerImg.style.setProperty(`transform`, ` translateY(${scrolled * 1.5}%)`)
+    }
 }
 const socialMedia = document.getElementById("social-media")
 function showSW() {
     let scrolled = scrolling();
     if (window.innerWidth > 800) {
-        if (scrolled >= 30) {
-            socialMedia.style.setProperty("right", '0')
-        } else {
-            socialMedia.style.setProperty("right", '-20%')
+        if (socialMedia) {
+            if (scrolled >= 30) {
+                socialMedia.style.setProperty("right", '0')
+            } else {
+                socialMedia.style.setProperty("right", '-20%')
+            }
         }
+
 
     }
 
@@ -96,5 +101,19 @@ function handleScroll() {
         }
     });
 }
-
-
+// Pobierz wszystkie elementy z klasą 'delayed-link'
+const links = document.getElementsByClassName('delayed-link');
+const wholeBody = document.querySelector(".slide-sleep");
+// Dla każdego linku dodaj obsługę zdarzenia
+for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function (event) {
+        event.preventDefault();
+        wholeBody.classList.add("slide-active")
+        const currentLink = this;
+        console.log(wholeBody)
+        // Dodaj opóźnienie dla animacji (w tym przypadku 300 ms)
+        setTimeout(function () {
+            window.location.href = currentLink.getAttribute('href');
+        }, 1100);
+    });
+}

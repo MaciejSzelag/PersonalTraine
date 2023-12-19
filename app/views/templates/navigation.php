@@ -20,3 +20,5 @@
             <div class="progress-bar" id="myBar"></div>
         </div>
     </nav>
+    <div class="slide-sleep"></div>
+    <div class="slide-exit"></div>

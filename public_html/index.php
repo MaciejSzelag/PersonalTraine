@@ -1,26 +1,10 @@
-<?php include '../config/head.php';?>
-
-<!-- <?php include '../app/home/views/partials/intro.php';?> -->
-<?php include '../app/views/templates/navigation.php';?>
-
-
-
+<?php session_start();?>
 <?php
+include "../app/Routes/get_source.php";
+include '../config/tab_title.php';
 
-if (isset($_GET["source"])) {
-    $source = $_GET["source"];
-} else {
-    $source = '';
-}
-switch ($source) {
+include '../config/head.php';
 
-    case "clients";
-        include "../app/clients/views/index.php";
-        break;
-    default:
-        include "../app/home/views/index.php";
-}
-
-?>
-
-<?php include '../app/views/templates/footer.php';
+include '../app/views/templates/navigation.php';
+include "../app/Routes/route_handler.php";
+include '../app/views/templates/footer.php';

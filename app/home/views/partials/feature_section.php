@@ -57,7 +57,7 @@
             <div class="section-container">
                 <div class="row">
                     <ul class="img-list">
-                        <li><a href="index.php?source=clients">
+                        <!-- <li><a href="index.php?source=Client">
                                 <div class="img-container">
                                     <div class="img-wrap"><img src="../img/fitness/adult-640.jpg" alt=""></div>
                                     <div class="img-title-wrap">
@@ -71,22 +71,39 @@
                                         <div class="h2-img small">More about transformation</div>
                                     </div>
                                 </div>
-                            </a></li>
-                        <li><a href="">
+                            </a></li> -->
+
+
+<?php
+
+global $connection;
+$query = "SELECT * FROM myclients";
+$selectMyClients = mysqli_query($connection, $query);
+while ($row = mysqli_fetch_assoc($selectMyClients)) {
+    $cl_id = $row["cl_id"];
+    $cl_name = $row["cl_name"];
+    $cl_img = $row["cl_img"];
+
+    ?>
+
+                        <li><a class="delayed-link" id="myLink" href="index.php?source=Client&cl_id=<?php echo $cl_id ?>">
                                 <div class="img-container">
-                                    <div class="img-wrap"><img src="../img/fitness/woman-2-640.jpg" alt=""></div>
+                                    <div class="img-wrap"><img src="../img/fitness/<?php echo $cl_img; ?>" alt=""></div>
                                     <div class="img-title-wrap">
-                                        <div class="h2-img">Name/Title</div>
-                                        <div class="decrib-img">Lorem ipsum,
-                                            dolor sit amet consectetur adipisicing elit. Minus saepe aliquid id
-                                            amet tenetur nemo,
-                                            ab beatae fugit harum neque nam distinctio facere excepturi.
-                                            Nesciunt quod accusantium quia? Iste,
-                                            minus.</div>
+                                        <div class="h2-img"><?php echo $cl_name; ?></div>
+                                        <div class="decrib-img">He/She lost a 15 kg</div>
                                         <div class="h2-img small">More about transformation</div>
                                     </div>
                                 </div>
                             </a></li>
+
+<?php
+}
+?>
+
+
+
+<!--
                         <li><a href="">
                                 <div class="img-container">
                                     <div class="img-wrap"><img src="../img/fitness/man-2-640.jpg" alt=""></div>
@@ -146,7 +163,7 @@
                                         <div class="h2-img small">More about transformation</div>
                                     </div>
                                 </div>
-                            </a></li>
+                            </a></li> -->
                     </ul>
                 </div>
             </div>
@@ -193,7 +210,7 @@
                 </div>
             </div>
         </div>
-        <div class="section-1 grid-pic section-main" id="Contact">
+        <div class="section-1 grid-pic section-main" >
             <div class="section-container">
                 <div class="row">
                     <div class="col-m">
@@ -207,6 +224,25 @@
                             transform your fitness goals into reality—contact me today, and let the journey
                             begin!
                         </p><a class="mail-a" href="mailto:szelag.maciej@gmailcom"><i>szelag.maciej@gmail.com</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-1 grid-pic section-main" id="Contact">
+            <div class="section-container">
+                <div class="row">
+                    <div class="col-m">
+                        <h1 class="h1-1"><i class="fa-regular fa-envelope"></i>Contact</h1>
+                        <p class="p1">Yo can contact with me by:
+                        <div class="btn-container">
+                        <div class="btn"><a href="mailto:szelag.maciej@gmailcom"><i class="fa-solid fa-at"></i>email</a>
+                            </div>
+                            <div class="btn"><a href="https://www.facebook.com/profile.php?id=100000727683099"><i class="fa-brands fa-facebook"></i>facebook</a></div>
+                            <div class="btn"><a href="https://www.instagram.com/maciej_shellong_bjj/?hl=en-gb"><i class="fa-brands fa-instagram"></i>Instagram</a>
+                            </div>
+                            <div class="btn"><a href="https://www.tiktok.com/@maciejszelagdev"><i class="fa-brands fa-tiktok"></i>TikTok</a></div>
+                        </div>
+                        <!-- </p><a class="mail-a" href="mailto:szelag.maciej@gmailcom"><i>szelag.maciej@gmail.com</i></a> -->
                     </div>
                 </div>
             </div>

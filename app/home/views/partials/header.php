@@ -8,6 +8,6 @@
             </div>
         </div>
         <div class="main-img">
-            <div class="img-wrap"></div>
+            <div class="img-wrap img-paralax"></div>
         </div>
 </header>

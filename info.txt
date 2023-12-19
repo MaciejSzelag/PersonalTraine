@@ -1,0 +1,15 @@
+Aby dodac nowa strona nalezy utworzyc 
+1. nowy folder w app 
+2. w app  NowaNazwa strony 
+3. potem w nim utworzyc views
+4. a w nim index.php 
+5. oraz folder partials z czesciami strony (jesli potrzebne).
+
+Nastepnie w folderze Routes 
+1. w pliku get_source dodac nowa nazwe strony: $zmienna = "nazwa"
+2. w pliku route_handler dodac case z nowa zmienna z get_source oraz sciezke
+
+Nastepnie folderze functions w pliku functions.php 
+w funkcji getTitleFromSource 
+1. utworzyc global $nowa zmienna z get_source
+2. oraz w switch case $nowazmienna $title = $nowazmienna
