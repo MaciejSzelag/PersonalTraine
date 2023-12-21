@@ -17,6 +17,9 @@
                             and let's start your fitness journey today.Feel free to reach out for more
                             information or to schedule your first session. Let's make fitness a sustainable and
                             rewarding part of your lifestyle ! </p>
+                            <div class="btn-container">
+                            <div class="btn"><a class="delayed-link" href="index.php?source=About_Me"><i class="fa-regular fa-star"></i>Click abd read more About Me</i></a></div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -57,23 +60,6 @@
             <div class="section-container">
                 <div class="row">
                     <ul class="img-list">
-                        <!-- <li><a href="index.php?source=Client">
-                                <div class="img-container">
-                                    <div class="img-wrap"><img src="../img/fitness/adult-640.jpg" alt=""></div>
-                                    <div class="img-title-wrap">
-                                        <div class="h2-img">Name/Title</div>
-                                        <div class="decrib-img">Lorem ipsum,
-                                            dolor sit amet consectetur adipisicing elit. Minus saepe aliquid id
-                                            amet tenetur nemo,
-                                            ab beatae fugit harum neque nam distinctio facere excepturi.
-                                            Nesciunt quod accusantium quia? Iste,
-                                            minus.</div>
-                                        <div class="h2-img small">More about transformation</div>
-                                    </div>
-                                </div>
-                            </a></li> -->
-
-
 <?php
 
 global $connection;
@@ -88,7 +74,9 @@ while ($row = mysqli_fetch_assoc($selectMyClients)) {
 
                         <li><a class="delayed-link" id="myLink" href="index.php?source=Client&cl_id=<?php echo $cl_id ?>">
                                 <div class="img-container">
-                                    <div class="img-wrap"><img src="../img/fitness/<?php echo $cl_img; ?>" alt=""></div>
+                                    <div class="img-wrap">
+                                        <img src="../img/fitness/<?php echo $cl_img; ?>" alt="">
+                                    </div>
                                     <div class="img-title-wrap">
                                         <div class="h2-img"><?php echo $cl_name; ?></div>
                                         <div class="decrib-img">He/She lost a 15 kg</div>
@@ -102,68 +90,6 @@ while ($row = mysqli_fetch_assoc($selectMyClients)) {
 ?>
 
 
-
-<!--
-                        <li><a href="">
-                                <div class="img-container">
-                                    <div class="img-wrap"><img src="../img/fitness/man-2-640.jpg" alt=""></div>
-                                    <div class="img-title-wrap">
-                                        <div class="h2-img">Name/Title</div>
-                                        <div class="decrib-img">Lorem ipsum,
-                                            dolor sit amet consectetur adipisicing elit. Minus saepe aliquid id
-                                            amet tenetur nemo,
-                                            ab beatae fugit harum neque nam distinctio facere excepturi.
-                                            Nesciunt quod accusantium quia? Iste,
-                                            minus.</div>
-                                        <div class="h2-img small">More about transformation</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                        <li><a href="">
-                                <div class="img-container">
-                                    <div class="img-wrap"><img src="../img/fitness/training_640.jpg" alt=""></div>
-                                    <div class="img-title-wrap">
-                                        <div class="h2-img">Name/Title</div>
-                                        <div class="decrib-img">Lorem ipsum,
-                                            dolor sit amet consectetur adipisicing elit. Minus saepe aliquid id
-                                            amet tenetur nemo,
-                                            ab beatae fugit harum neque nam distinctio facere excepturi.
-                                            Nesciunt quod accusantium quia? Iste,
-                                            minus.</div>
-                                        <div class="h2-img small">More about transformation</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                        <li><a href="">
-                                <div class="img-container">
-                                    <div class="img-wrap"><img src="../img/fitness/training-640.jpg" alt=""></div>
-                                    <div class="img-title-wrap">
-                                        <div class="h2-img">Name/Title</div>
-                                        <div class="decrib-img">Lorem ipsum,
-                                            dolor sit amet consectetur adipisicing elit. Minus saepe aliquid id
-                                            amet tenetur nemo,
-                                            ab beatae fugit harum neque nam distinctio facere excepturi.
-                                            Nesciunt quod accusantium quia? Iste,
-                                            minus.</div>
-                                        <div class="h2-img small">More about transformation</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                        <li><a href="">
-                                <div class="img-container">
-                                    <div class="img-wrap"><img src="../img/fitness/woman-640.jpg" alt=""></div>
-                                    <div class="img-title-wrap">
-                                        <div class="h2-img">Name/Title</div>
-                                        <div class="decrib-img">Lorem ipsum,
-                                            dolor sit amet consectetur adipisicing elit. Minus saepe aliquid id
-                                            amet tenetur nemo,
-                                            ab beatae fugit harum neque nam distinctio facere excepturi.
-                                            Nesciunt quod accusantium quia? Iste,
-                                            minus.</div>
-                                        <div class="h2-img small">More about transformation</div>
-                                    </div>
-                                </div>
-                            </a></li> -->
                     </ul>
                 </div>
             </div>

@@ -71,6 +71,40 @@ nav {
     }
 }
 
+.slide-active,
+.slide-exit {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-main-1;
+    z-index: 2000;
+}
+
+.slide-active:after,
+.slide-exit::after {
+    content: "New You, New Life";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    @include flex-center-column-full;
+    font-size: 10vh;
+    text-align: center;
+}
+
+.slide-active {
+    top: -120%;
+    animation: enter 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
+}
+
+.slide-exit {
+    top: 0;
+    animation: exit 1s 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
+}
+
+
+
 @media(max-width:1300px) {
     nav {
         .menu-bars {

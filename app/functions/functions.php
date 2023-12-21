@@ -11,11 +11,13 @@ function getTitleFromSource($source)
     global $client; //Zmienne w zakresie globalnym
     global $home;
     global $title;
+    global $About_me;
     // global $test;
     switch ($source) {
-        // case $test;
-        //     $title = $test;
-        //     break;
+        case $About_me;
+            $title = $About_me;
+            break;
+
         case $client;
             $title = $client;
             break;

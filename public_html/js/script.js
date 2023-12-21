@@ -1,5 +1,5 @@
 window.addEventListener('load', handleScroll);
-window.onscroll = function () { progressBar(); paralax(); showSW(); handleScroll() };
+window.onscroll = function () { progressBar(); paralax(); showSW(); handleScroll(); };
 
 //behaving on scroll
 const scrolling = function () {
@@ -7,6 +7,7 @@ const scrolling = function () {
     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     let scrolled = (winScroll / height) * 100;
     return scrolled;
+
 }
 const myBar = document.getElementById("myBar");
 function progressBar() {
@@ -23,9 +24,10 @@ function paralax() {
 const socialMedia = document.getElementById("social-media")
 function showSW() {
     let scrolled = scrolling();
+    console.log(scrolled)
     if (window.innerWidth > 800) {
         if (socialMedia) {
-            if (scrolled >= 30) {
+            if (scrolled >= 15) {
                 socialMedia.style.setProperty("right", '0')
             } else {
                 socialMedia.style.setProperty("right", '-20%')
@@ -114,6 +116,6 @@ for (let i = 0; i < links.length; i++) {
         // Dodaj opóźnienie dla animacji (w tym przypadku 300 ms)
         setTimeout(function () {
             window.location.href = currentLink.getAttribute('href');
-        }, 1100);
+        }, 1000);
     });
 }
